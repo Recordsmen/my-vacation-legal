@@ -8,16 +8,17 @@
   body { font: 16px/1.6 -apple-system, system-ui, sans-serif; max-width: 680px; margin: 0 auto; padding: 32px 20px; color: #11161F; background: #F4F6F8; }
   h1 { font-size: 32px; line-height: 1.15; } h2 { font-size: 20px; margin-top: 32px; }
   .muted { color: #646D7D; }
+  li { margin: 4px 0; }
 </style>
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p class="muted">My Vacation · Last updated: 2 November 2026</p>
+<p class="muted">My Vacation · Last updated: 3 November 2026</p>
 
-<p>My Vacation lets you take three photos a day during a vacation and keeps them sealed until it ends. It is built to work without an account and without a server. This page explains what that means for your data.</p>
+<p>My Vacation lets you take three photos a day during a vacation and keeps them sealed until it ends. Everything works on your phone without an account. A few features you can choose to use — share links, group trips, Cloud Backup and My Vacation+ — need our server. This page explains what each one sends, what we can and can't see, how long we keep it and how to delete it.</p>
 
-<h2>Your photos stay on your phone</h2>
-<p>Photos you take or pick, vacation names, dates and reminder times are stored only in the app's private storage on your device. We do not upload them, and we cannot see them. Deleting the app deletes them.</p>
+<h2>On your phone</h2>
+<p>Photos you take or pick, vacation names, dates and reminder times are stored in the app's private storage on your device. Unless you use one of the online features below, none of it leaves the phone and we cannot see it. Deleting the app deletes it.</p>
 <p>On iPhone, the app's data is part of your iCloud or computer backup, under Apple's terms. On Android it is left out of the Google cloud backup (which is too small for a vacation of photos) and moves to a new phone only with a direct phone-to-phone transfer.</p>
 
 <h2>Camera and photo library</h2>
@@ -28,7 +29,48 @@
 </ul>
 
 <h2>Notifications</h2>
-<p>Reminders are scheduled on your device. No push service is involved.</p>
+<p>Photo reminders are scheduled on your device. If you use group trips or share links, our server can also send you a push notification (for example "Your group trip is open") through Firebase Cloud Messaging (Google), which uses Apple's push service on iPhone. For that we store your device's push token. Notification texts never contain photos or names.</p>
+
+<h2>Your account (only for online features)</h2>
+<p>The first time you make a share link or create or join a group trip, the app quietly creates an account. There is no email, phone number, password or sign-in with Apple or Google. Our server stores:</p>
+<ul>
+  <li>a random account ID and when it was created;</li>
+  <li>for each of your phones: the platform, model and app version, the device's public keys (the private keys never leave the phone), the push token, and when it was last seen;</li>
+  <li>whether the phone passed an app-integrity check: on iPhone, Apple App Attest (we check it on our server and keep the key it creates); on Android, Google Play Integrity (the app's token goes to Google, which tells us whether the app and device look genuine). We keep only "verified" or "limited", not Google's full answer;</li>
+  <li>if you set a recovery key: only its public part, and your encrypted account vault (your group profile and keys), which we cannot read.</li>
+</ul>
+<p>An account with no recovery key and no share links that hasn't been used for 30 days is deleted automatically.</p>
+
+<h2>Share links</h2>
+<p>Photos in a share link are encrypted on your phone before upload. The key is the part of the link after the "#", which browsers never send to a server, so we store only encrypted files and cannot see the photos. Anyone you give the link to can open them.</p>
+<ul>
+  <li><b>What we can see:</b> how many files and how big, when the link was made, its expiry, view and download counts. By default the trip name and dates are shown in chat previews, so they are stored unencrypted; you can turn that off before sharing. If you pick the collage chat preview, that one picture is uploaded unencrypted so chat apps can show it.</li>
+  <li><b>Visitors:</b> to count one view per person per day we keep a one-way hash of the visitor's IP address and browser for one day. The link page loads no analytics or third-party scripts.</li>
+  <li><b>How long:</b> when the link expires (7 or 30 days, or never) or you turn it off, its photos are deleted from our storage; a small record (dates and counts) stays so the link can show "expired".</li>
+</ul>
+
+<h2>Group trips</h2>
+<p>Photos, the trip name and members' names and emoji avatars are encrypted on the phones of the people in the trip; only members can open them. Our server needs some details to run the trip and sees them unencrypted: the trip's dates and time zone, when it opens, who is a member and their role, and for each photo who took it, the day and slot (morning, day or evening), the size and the upload time. It also keeps votes to open early, blocks and reports.</p>
+<p>Group photos stay available to the group so members can download them. When you delete your account, your photos are deleted from every group trip.</p>
+
+<h2>Cloud Backup</h2>
+<p>If you turn on Cloud Backup (My Vacation+), your trips and photos are encrypted on your phone with a key only you hold (your recovery key) before upload. We store only encrypted files, their sizes and dates, and cannot read them. Older versions are removed after 7 days; the latest backups stay until you delete your account. If you lose your phone and your recovery key, we cannot recover the backup.</p>
+
+<h2>Reports and moderation</h2>
+<p>Because shared photos are encrypted, we can only look at one if someone reports it and chooses to let us:</p>
+<ul>
+  <li>on a share link page, the reporter can include the link's key; in a group trip, the reporter can send a copy of the photo (the app asks first). Reports can also include a short note and, if the reporter wants a reply, an email address;</li>
+  <li>a report about a name sends a copy of that name;</li>
+  <li>only our moderators can see these copies. They are deleted 30 days after the report, unless the content appears illegal: then we keep it, with the account details listed above, for one year, as US law (18 U.S.C. §2258A) requires when we report child sexual abuse material to the National Center for Missing &amp; Exploited Children (NCMEC), and we may share it only with NCMEC or authorities;</li>
+  <li>to stop the same person reporting many times we keep a one-way hash of the reporter's IP address, never the address itself.</li>
+</ul>
+<p>The rules for shared photos are in the <a href="terms.html#community-rules">Terms of Use</a>.</p>
+
+<h2>Purchases</h2>
+<p>My Vacation+ is bought through the App Store or Google Play; we never see your payment details. To unlock features on our server (Cloud Backup, group trips), the app sends us the store's purchase proof, which we check with Apple or Google. We keep a one-way hash of the purchase ID, the product, the plan, whether it's a trial, whether it renews, and when it expires. Apple and Google also tell our server when a subscription renews, ends or is refunded.</p>
+
+<h2>Server logs</h2>
+<p>Our server keeps short technical logs of each request: the time, the address it called, the result, the platform and the IP address. They contain no photos and no content you write, help us keep the service working and safe, and are kept by our hosting provider for up to 30 days.</p>
 
 <h2>Crash reports</h2>
 <p>If the app crashes, it sends a crash report to Firebase Crashlytics (Google): the device model, OS version, app version, a random installation ID, the technical details of the crash and a short log of what the app did just before it (which screens were opened and which actions ran, the same kind of entries as the usage statistics below). Reports contain no photos, vacation names or anything you type, are not linked to who you are and are deleted after 90 days. Crash reports are part of how the app works and can't be turned off; they are the only way we learn that the app broke on someone's phone.</p>
@@ -47,16 +89,32 @@
 </ul>
 <p>Crash reports and usage statistics are processed by Google as a service provider under the <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>.</p>
 
-<h2>What we don't do</h2>
-<p>No accounts, no advertising, no tracking, no selling or sharing of personal data.</p>
+<h2>Service providers</h2>
+<p>We use these companies to run My Vacation. They process data only on our behalf:</p>
+<ul>
+  <li>Railway (USA): hosts our server and its database;</li>
+  <li>Cloudflare (USA): stores the encrypted files (R2) and the chat-preview images, and serves our web pages;</li>
+  <li>Google: Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config (which settings the app should use) and Firebase Cloud Messaging; Google Play Integrity and Google Play billing on Android;</li>
+  <li>Apple: App Attest, push notifications and App Store billing on iPhone;</li>
+  <li>GitHub (USA): hosts these legal pages.</li>
+</ul>
+<p>Some of these providers process data outside your country, including in the United States, under their standard data-protection terms.</p>
 
-<h2>Sharing</h2>
-<p>When you share a collage, it goes to the app you pick (for example a messenger) and is handled under that app's policy.</p>
+<h2>Your choices and rights</h2>
+<ul>
+  <li><b>See your data:</b> Settings → Account → Export my data gives you your trips, photos and everything our server stores about your account.</li>
+  <li><b>Delete your data:</b> Settings → Account → Delete account removes your account, devices, share links, your photos in group trips and your Cloud Backup from our server straight away. If you no longer have the phone, open <a href="https://vacation.oliksplit.app/account/delete">vacation.oliksplit.app/account/delete</a> and enter your recovery key: it is checked in your browser and never sent to us. The only things we keep after deletion are a note that an account with that random ID was deleted, and content we must keep for one year after reporting it as illegal.</li>
+  <li><b>Turn things off:</b> Settings → Usage statistics; share links can be turned off at any time; you can leave a group trip.</li>
+  <li>Depending on where you live (for example under the GDPR in the EU and UK), you can also ask us to correct your data, restrict or object to its use, and complain to your data-protection authority. Write to us and we'll answer within 30 days.</li>
+</ul>
+
+<h2>What we don't do</h2>
+<p>No advertising, no selling or sharing of personal data, no tracking across other companies' apps or websites, no reading of your photo library, and no access to photos we haven't been given a key to.</p>
 
 <h2>Children</h2>
-<p>The app is not directed at children under 13 and does not knowingly collect their data.</p>
+<p>The app is not directed at children under 13 and does not knowingly collect their data. If you think a child has used an online feature, write to us and we'll delete the account.</p>
 
 <h2>Changes and contact</h2>
-<p>If this policy changes, the new version will be posted on this page with a new date. Questions: <a href="mailto:ceoolik@gmail.com">ceoolik@gmail.com</a>.</p>
+<p>If this policy changes, the new version will be posted on this page with a new date. Questions or requests: <a href="mailto:ceoolik@gmail.com">ceoolik@gmail.com</a>.</p>
 </body>
 </html>
