@@ -1,120 +1,266 @@
 <!doctype html>
+<!--
+  Source of https://recordsmen.github.io/my-vacation-legal/privacy.html. Edit here, then render with docs/legal/build.py
+  (contact details come from site.json). Draft for review by counsel: see docs/legal/FOR_LAWYER.md and JURISDICTIONS.md.
+  Keep the ids: the app, the share-link web viewer and the Terms link to them.
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Vacation — Privacy Policy</title>
-<style>
-  body { font: 16px/1.6 -apple-system, system-ui, sans-serif; max-width: 680px; margin: 0 auto; padding: 32px 20px; color: #11161F; background: #F4F6F8; }
-  h1 { font-size: 32px; line-height: 1.15; } h2 { font-size: 20px; margin-top: 32px; }
-  .muted { color: #646D7D; }
-  li { margin: 4px 0; }
-</style>
+<link rel="stylesheet" href="legal.css">
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p class="muted">My Vacation · Last updated: 3 November 2026</p>
+<p class="muted">My Vacation · Last updated: 4 November 2026</p>
 
-<p>My Vacation lets you take three photos a day during a vacation and keeps them sealed until it ends. Everything works on your phone without an account. A few features you can choose to use — share links, group trips, Cloud Backup and My Vacation+ — need our server. This page explains what each one sends, what we can and can't see, how long we keep it and how to delete it.</p>
-
-<h2>On your phone</h2>
-<p>Photos you take or pick, vacation names, dates and reminder times are stored in the app's private storage on your device. Unless you use one of the online features below, none of it leaves the phone and we cannot see it. Deleting the app deletes it.</p>
-<p>On iPhone, the app's data is part of your iCloud or computer backup, under Apple's terms. On Android it is left out of the Google cloud backup (which is too small for a vacation of photos) and moves to a new phone only with a direct phone-to-phone transfer.</p>
-
-<h2>Camera and photo library</h2>
+<div class="summary">
+<p><b>The short version</b></p>
 <ul>
-  <li><b>Camera</b> — to take your morning, day and evening photos inside the app.</li>
-  <li><b>Picking from the gallery</b> — uses the system photo picker: the app only receives the photo you choose. It reads that photo's capture date to check it was taken during the current slot.</li>
-  <li><b>Saving to Photos</b> — on iOS the app asks for add-only access to save a finished collage. It never reads your library.</li>
+  <li>My Vacation works on your phone without an account. Your photos stay on the phone unless you use an online feature.</li>
+  <li>Photos in Cloud Backup, share links and group trips are end-to-end encrypted: we store files we can't open. We see a photo only if someone reports it and chooses to send us a copy or the link's key, or if you choose an unencrypted chat preview for a link.</li>
+  <li>No ads, no advertising IDs, no selling or sharing of personal data, no tracking across other companies' apps or websites.</li>
+  <li>We collect usage statistics that aren't linked to your account (you can turn them off) and crash reports, through Google Firebase.</li>
+  <li>You can export or delete your online data in Settings → Manage account.</li>
 </ul>
+</div>
 
-<h2>Notifications</h2>
-<p>Photo reminders are scheduled on your device. If you use group trips or share links, our server can also send you a push notification (for example "Your group trip is open") through Firebase Cloud Messaging (Google), which uses Apple's push service on iPhone. For that we store your device's push token. Notification texts never contain photos or names.</p>
+<p>This policy explains what My Vacation (the app, the share-link web pages and our server) collects, why, how long we keep it, who processes it and what you can do about it. The <a href="#regions">regional sections</a> at the end add what the law of your country requires.</p>
 
-<h2>Your account (only for online features)</h2>
-<p>The first time you make a share link or create or join a group trip, the app quietly creates an account. There is no email, phone number, password or sign-in with Apple or Google. Our server stores:</p>
+<ol class="toc">
+  <li><a href="#who">Who is responsible</a></li>
+  <li><a href="#device">On your phone</a></li>
+  <li><a href="#permissions">Camera, photos and notifications</a></li>
+  <li><a href="#account">Your account</a></li>
+  <li><a href="#links">Share links</a></li>
+  <li><a href="#groups">Group trips</a></li>
+  <li><a href="#backup">Cloud Backup</a></li>
+  <li><a href="#reports">Reports and moderation</a></li>
+  <li><a href="#purchases">Purchases</a></li>
+  <li><a href="#diagnostics">Logs, crash reports and Report a problem</a></li>
+  <li><a href="#analytics">Usage statistics</a></li>
+  <li><a href="#on-device">Processing that never leaves your phone</a></li>
+  <li><a href="#retention">How long we keep data</a></li>
+  <li><a href="#providers">Service providers and disclosures</a></li>
+  <li><a href="#transfers">International transfers</a></li>
+  <li><a href="#security">Security</a></li>
+  <li><a href="#rights">Your choices and rights</a></li>
+  <li><a href="#children">Children</a></li>
+  <li><a href="#regions">Regional sections</a></li>
+  <li><a href="#changes">Changes and contact</a></li>
+</ol>
+
+<h2 id="who">1. Who is responsible</h2>
+<p>My Vacation is made by Oleksandr Uchytelev, an individual developer based in Israel ("we", "us"). We decide how your personal data is used (in EU terms, we are the <i>controller</i>).</p>
+<ul>
+  <li>Email for privacy questions and requests: <a href="mailto:ceoolik@gmail.com?subject=My%20Vacation%20privacy">ceoolik@gmail.com</a></li>
+  
+  
+  
+</ul>
+<p>The same person acts as privacy officer, data protection contact and grievance officer under the laws listed in the <a href="#regions">regional sections</a>.</p>
+
+<h2 id="device">2. On your phone</h2>
+<p>Photos you take or pick, vacation names, dates and reminder times are stored in the app's private storage on your device. Unless you use one of the online features below, none of it leaves the phone and we cannot see it. Deleting the app deletes it.</p>
+<p>On iPhone, the app's data is part of your iCloud or computer backup, under Apple's terms. On Android it is left out of the Google cloud backup (which is too small for a vacation of photos) and moves to a new phone only with a direct phone-to-phone transfer. Photos sent to a share link or a group trip are re-encoded first, which removes their embedded metadata, including any location (GPS in EXIF).</p>
+
+<h2 id="permissions">3. Camera, photos and notifications</h2>
+<ul>
+  <li><b>Camera</b>: to take your morning, day and evening photos inside the app.</li>
+  <li><b>Picking from the gallery</b>: uses the system photo picker, so the app only receives the photo you choose. It reads that photo's capture date to check it was taken during the current slot.</li>
+  <li><b>Saving to Photos</b>: on iPhone the app asks for add-only access to save a finished collage or film. It never reads your library.</li>
+  <li><b>Notifications</b>: photo reminders are scheduled on your device. If you use group trips or share links, our server can also send you a push notification (for example "Your group trip is open") through Firebase Cloud Messaging (Google), which uses Apple's push service on iPhone. For that we store your device's push token. Notification texts never contain photos or names.</li>
+</ul>
+<p>You can withdraw any of these permissions in the system settings at any time.</p>
+
+<h2 id="account">4. Your account (only for online features)</h2>
+<p>The first time you use an online feature (a share link, a group trip or Cloud Backup), the app quietly creates an account. There is no email, phone number, password, or sign-in with Apple or Google. Our server stores:</p>
 <ul>
   <li>a random account ID and when it was created;</li>
   <li>for each of your phones: the platform, model and app version, the device's public keys (the private keys never leave the phone), the push token, and when it was last seen;</li>
   <li>whether the phone passed an app-integrity check: on iPhone, Apple App Attest (we check it on our server and keep the key it creates); on Android, Google Play Integrity (the app's token goes to Google, which tells us whether the app and device look genuine). We keep only "verified" or "limited", not Google's full answer;</li>
   <li>if you set a recovery key: only its public part, and your encrypted account vault (your group profile and keys), which we cannot read.</li>
 </ul>
-<p>An account with no recovery key and no share links that hasn't been used for 30 days is deleted automatically.</p>
+<p><b>Why:</b> to run the features you asked for and to keep the service safe from abuse.</p>
 
-<h2>Share links</h2>
+<h2 id="links">5. Share links</h2>
 <p>Photos in a share link are encrypted on your phone before upload. The key is the part of the link after the "#", which browsers never send to a server, so we store only encrypted files and cannot see the photos. Anyone you give the link to can open them.</p>
 <ul>
-  <li><b>What we can see:</b> how many files and how big, when the link was made, its expiry, view and download counts. By default the trip name and dates are shown in chat previews, so they are stored unencrypted; you can turn that off before sharing. If you pick the collage chat preview, that one picture is uploaded unencrypted so chat apps can show it.</li>
-  <li><b>Visitors:</b> to count one view per person per day we keep a one-way hash of the visitor's IP address and browser for one day. The link page loads no analytics or third-party scripts.</li>
-  <li><b>How long:</b> when the link expires (7 or 30 days, or never) or you turn it off, its photos are deleted from our storage; a small record (dates and counts) stays so the link can show "expired".</li>
+  <li><b>What we can see:</b> how many files and how big, when the link was made, its expiry, and view and download counts. By default the trip name and dates are shown in chat previews, so they are stored unencrypted; you can turn that off before sharing. If you pick the collage chat preview, that one picture is uploaded unencrypted so chat apps can show it.</li>
+  <li><b>Visitors:</b> to count one view per person per day we keep a one-way hash of the visitor's IP address and browser, salted with a value that changes every day, for one day. The link page sets no cookies and loads no analytics or third-party scripts.</li>
 </ul>
 
-<h2>Group trips</h2>
-<p>Photos, the trip name and members' names and emoji avatars are encrypted on the phones of the people in the trip; only members can open them. Our server needs some details to run the trip and sees them unencrypted: the trip's dates and time zone, when it opens, who is a member and their role, and for each photo who took it, the day and slot (morning, day or evening), the size and the upload time. It also keeps votes to open early, blocks and reports.</p>
-<p>Group photos stay available to the group so members can download them. When you delete your account, your photos are deleted from every group trip.</p>
+<h2 id="groups">6. Group trips</h2>
+<p>Photos, the trip name and members' names and emoji avatars are encrypted on the phones of the people in the trip; only members can open them. To run the trip our server sees some details unencrypted: the trip's dates and time zone, when it opens, who is a member and their role, and for each photo who took it, the day and slot (morning, day or evening), the size and the upload time. It also keeps votes to open early, blocks, hidden photos and reports.</p>
+<p>Group photos stay available to the group so members can download them. When you leave a group you choose whether your photos stay; when you delete your account, your photos are deleted from every group trip.</p>
 
-<h2>Cloud Backup</h2>
-<p>If you turn on Cloud Backup (My Vacation+), your trips and photos are encrypted on your phone with a key only you hold (your recovery key) before upload. We store only encrypted files, their sizes and dates, and cannot read them. Older versions are removed after 7 days; the latest backups stay until you delete your account. If you lose your phone and your recovery key, we cannot recover the backup.</p>
+<h2 id="backup">7. Cloud Backup</h2>
+<p>Cloud Backup is part of My Vacation+ and is being rolled out. If you turn it on, your trips and photos are encrypted on your phone with a key only you hold (your recovery key) before upload. We store only encrypted files, their sizes and dates, and cannot read them. If you lose your phone and your recovery key, we cannot recover the backup.</p>
 
-<h2>Reports and moderation</h2>
+<h2 id="reports">8. Reports and moderation</h2>
 <p>Because shared photos are encrypted, we can only look at one if someone reports it and chooses to let us:</p>
 <ul>
   <li>on a share link page, the reporter can include the link's key; in a group trip, the reporter can send a copy of the photo (the app asks first). Reports can also include a short note and, if the reporter wants a reply, an email address;</li>
   <li>a report about a name sends a copy of that name;</li>
-  <li>only our moderators can see these copies. They are deleted 30 days after the report, unless the content appears illegal: then we keep it, with the account details listed above, for one year, as US law (18 U.S.C. §2258A) requires when we report child sexual abuse material to the National Center for Missing &amp; Exploited Children (NCMEC), and we may share it only with NCMEC or authorities;</li>
-  <li>to stop the same person reporting many times we keep a one-way hash of the reporter's IP address, never the address itself.</li>
+  <li>to stop the same person reporting many times we keep a one-way hash of the reporter's IP address (salted daily), never the address itself;</li>
+  <li>only we, as moderator, can see these copies. How long they are kept is in <a href="#retention">section 13</a>.</li>
 </ul>
-<p>The rules for shared photos are in the <a href="terms.html#community-rules">Terms of Use</a>.</p>
+<p>If the content appears to be child sexual abuse material, we report it to the National Center for Missing &amp; Exploited Children (NCMEC) and, where the law requires, to other authorities, and keep the evidence as the law requires. The rules for shared photos and how decisions and appeals work are in the <a href="terms.html#community-rules">Terms of Use</a>.</p>
 
-<h2>Purchases</h2>
-<p>My Vacation+ is bought through the App Store or Google Play; we never see your payment details. To unlock features on our server (Cloud Backup, group trips), the app sends us the store's purchase proof, which we check with Apple or Google. We keep a one-way hash of the purchase ID, the product, the plan, whether it's a trial, whether it renews, and when it expires. Apple and Google also tell our server when a subscription renews, ends or is refunded.</p>
+<h2 id="purchases">9. Purchases</h2>
+<p>My Vacation+ is bought through the App Store or Google Play; we never see your name, payment details or billing address. To unlock features on our server (Cloud Backup, group trips), the app sends us the store's purchase proof, which we check with Apple or Google. We keep a one-way hash of the purchase ID, the product, the plan, whether it's a trial, whether it renews, and when it expires. Apple and Google also tell our server when a subscription renews, ends or is refunded.</p>
 
-<h2>Server logs</h2>
-<p>Our server keeps short technical logs of each request: the time, the address it called, the result, the platform and the IP address. They contain no photos and no content you write, help us keep the service working and safe, and are kept by our hosting provider for up to 30 days.</p>
+<h2 id="diagnostics">10. Logs, crash reports and Report a problem</h2>
+<p><b>Server logs.</b> Our server keeps short technical logs of each request: the time, the address it called, the result, the platform and the IP address. They contain no photos and no content you write, and help us keep the service working and safe.</p>
+<p><b>Crash reports.</b> If the app crashes, it sends a crash report to Firebase Crashlytics (Google): the device model, OS version, app version, a random installation ID, the technical details of the crash and a short log of what the app did just before it (which screens were opened and which actions ran). Reports contain no photos, vacation names or anything you type, and are not linked to your account. Crash reports can't be turned off in the app; they are how we learn that the app broke on someone's phone.</p>
+<p><b>Report a problem.</b> Settings → Report a problem lets you send us a note; after a crash the app also offers it once on the next launch. Nothing is sent until you press Send. The report contains the text you write, the details of the last crash if you leave "Attach the error" on, and technical diagnostics: app version, OS version, device model, app language, the screen you came from and the app's last 50 log entries (no photos and no vacation content). "Show what's sent" shows all of it before you send. You choose how to send it: through Crashlytics, or by email from your own mail app, in which case we also see your email address and use it only to reply.</p>
+<p><b>Settings.</b> Firebase Remote Config (Google) tells the app which settings and features to use. It uses the same random installation ID and no personal content.</p>
 
-<h2>Crash reports</h2>
-<p>If the app crashes, it sends a crash report to Firebase Crashlytics (Google): the device model, OS version, app version, a random installation ID, the technical details of the crash and a short log of what the app did just before it (which screens were opened and which actions ran, the same kind of entries as the usage statistics below). Reports contain no photos, vacation names or anything you type, are not linked to who you are and are deleted after 90 days. Crash reports are part of how the app works and can't be turned off; they are the only way we learn that the app broke on someone's phone.</p>
-
-<h2>Report a problem</h2>
-<p>Settings → Report a problem lets you send us a note when something goes wrong; after a crash the app also offers it once on the next launch. Nothing is sent until you press Send. The report contains the text you write, the details of the last crash if there was one and you leave "Attach the error" on, and technical diagnostics: app version, OS version, device model, app language, the screen you came from and the app's last 50 log entries (no photos and no vacation content). "Show what's sent" shows all of it before you send. You choose how to send it: through Crashlytics, as described above, or by email from your own mail app, in which case we also see your email address and use it only to reply.</p>
-
-<h2>Usage statistics</h2>
-<p>To learn which parts of the app people use and where they get stuck, the app sends anonymous usage statistics to Google Analytics for Firebase (Google).</p>
+<h2 id="analytics">11. Usage statistics</h2>
+<p>To learn which parts of the app people use and where they get stuck, the app sends usage statistics to Google Analytics for Firebase (Google).</p>
 <ul>
-  <li><b>What is sent</b> — counts of things that happen in the app, such as "a vacation was created" (with its type, planned length and whether reminders are on), "a photo was sealed" (morning, day or evening; camera or gallery; which day of the trip), "a slot was missed", "the vacation was opened", "a collage was shared" (the kind of image and the app it went to) and which screens were opened. Google adds the device model, OS and app version, language, a coarse region derived from the connection and a random app-instance ID that resets when the app is reinstalled.</li>
-  <li><b>What is never sent</b> — photos, vacation names, file names or anything you type. The app does not collect the advertising ID (IDFA on iPhone, the Android advertising ID or Android ID), does not use the data for advertising, does not link it to who you are and does not track you across other companies' apps or websites.</li>
-  <li><b>Why</b> — only to improve My Vacation.</li>
-  <li><b>How long</b> — Google Analytics keeps this data for 14 months; copies we export to our own Google Cloud project for analysis are deleted within the same 14 months.</li>
-  <li><b>How to turn it off</b> — Settings → Usage statistics. From then on nothing is sent.</li>
+  <li><b>What is sent:</b> counts of things that happen in the app, such as "a vacation was created" (with its type, planned length and whether reminders are on), "a photo was sealed" (morning, day or evening; camera or gallery; which day of the trip), "a slot was missed", "a collage was shared" (the kind of image and the app it went to) and which screens were opened. Google adds the device model, OS and app version, language, a coarse region derived from the connection and a random app-instance ID that resets when the app is reinstalled.</li>
+  <li><b>What is never sent:</b> photos, vacation names, file names or anything you type. The app does not collect the advertising ID (IDFA on iPhone, the Android advertising ID or Android ID), turns off Google's advertising features, does not link statistics to your account and does not track you across other companies' apps or websites.</li>
+  <li><b>How to turn it off:</b> Settings → Usage statistics. From then on nothing is sent.</li>
 </ul>
-<p>Crash reports and usage statistics are processed by Google as a service provider under the <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>.</p>
 
-<h2>Service providers</h2>
-<p>We use these companies to run My Vacation. They process data only on our behalf:</p>
+<h2 id="on-device">12. Processing that never leaves your phone</h2>
+<ul>
+  <li><b>Stickers.</b> To cut a person or object out of a photo, the app uses the phone's built-in image segmentation (Apple Vision on iPhone, Google ML Kit on Android). It finds the outline of the subject in that one photo. It does not recognise who anyone is, does not create a face template, face print or any other biometric identifier, and nothing is sent to us or to Google or Apple.</li>
+  <li><b>Sensitive-photo warnings.</b> On supported phones, the app can check a photo for nudity before you share it and when others share it with you, and blur it until you tap: on iPhone with Apple's Sensitive Content Analysis when you have turned on Sensitive Content Warnings, on Android with an on-device model as we roll it out. The result stays on the phone. We may receive a count, in the usage statistics, of how often a blur happened or would have happened, never the photo or a score.</li>
+  <li><b>Trip Film, collages and reveals</b> are made on your phone.</li>
+</ul>
+
+<h2 id="retention">13. How long we keep data</h2>
+<div class="table-wrap">
+<table>
+  <tr><th>Data</th><th>Kept</th></tr>
+  <tr><td>Photos and trips on your phone</td><td>Until you delete them or the app</td></tr>
+  <tr><td>Account, devices, public keys, push tokens, encrypted vault</td><td>Until you delete the account. An account that never stored anything (no account vault and no share links) and whose phones haven't been used for 30 days is deleted automatically. Sign-in tokens expire after 60 days.</td></tr>
+  <tr><td>Phone-to-phone transfer sessions</td><td>Deleted one day after they expire</td></tr>
+  <tr><td>Share link photos and chat preview</td><td>Until the link expires (7 or 30 days, or never if you chose that) or you turn it off; links that never finished uploading go after one day. A link paused or turned off after reports keeps its files for 30 days so a wrong decision can be undone, then they are deleted unless kept as evidence. A small record (dates and counts) stays so the link can show "expired".</td></tr>
+  <tr><td>Link visitor hash</td><td>One day</td></tr>
+  <tr><td>Group trip photos and details</td><td>While the trip exists. Your photos go when you remove them, leave without keeping them or delete your account. The trip itself is deleted when the organizer deletes it, or when the organizer deletes their account and no other member is left.</td></tr>
+  <tr><td>Cloud Backup</td><td>The latest backup until you delete it or your account; older versions are removed after 7 days</td></tr>
+  <tr><td>Report evidence: photo copies, link keys, copied names, reporters' email addresses</td><td>30 days after the report, unless the content appears illegal: then one year, as US law (18 U.S.C. §2258A) requires after a report to NCMEC, or longer if an authority asks us in writing to keep it</td></tr>
+  <tr><td>Report and moderation records (what was reported, why, the note, the decision), and our log of moderation actions</td><td>As long as needed to handle appeals, repeat abuse and legal claims</td></tr>
+  <tr><td>Purchase records</td><td>Until you delete the account</td></tr>
+  <tr><td>Server logs</td><td>Up to 30 days, at our hosting provider</td></tr>
+  <tr><td>Crash reports</td><td>90 days</td></tr>
+  <tr><td>Usage statistics</td><td>14 months, including copies we export to our own Google Cloud project</td></tr>
+  <tr><td>Emails you send us</td><td>As long as needed to answer you and follow up</td></tr>
+  <tr><td>Record that an account was deleted</td><td>Kept, with only the random account ID, so we can show we did it</td></tr>
+</table>
+</div>
+
+<h2 id="providers">14. Service providers and disclosures</h2>
+<p>We use these companies to run My Vacation. They process data only on our instructions, under their data-processing terms:</p>
 <ul>
   <li>Railway (USA): hosts our server and its database;</li>
-  <li>Cloudflare (USA): stores the encrypted files (R2) and the chat-preview images, and serves our web pages;</li>
-  <li>Google: Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config (which settings the app should use) and Firebase Cloud Messaging; Google Play Integrity and Google Play billing on Android;</li>
-  <li>Apple: App Attest, push notifications and App Store billing on iPhone;</li>
+  <li>Cloudflare (USA): stores the encrypted files (R2) and the chat-preview images, and delivers our web pages;</li>
+  <li>Google (USA and worldwide): Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config, Firebase Cloud Messaging and Google Cloud; Google Play Integrity and Google Play billing on Android;</li>
+  <li>Apple (USA and worldwide): App Attest, push notifications and App Store billing on iPhone;</li>
   <li>GitHub (USA): hosts these legal pages.</li>
 </ul>
-<p>Some of these providers process data outside your country, including in the United States, under their standard data-protection terms.</p>
+<p>Apple and Google also process your purchase as the store you bought from, under their own privacy policies.</p>
+<p>Apart from these providers, we disclose data only: to NCMEC or authorities when we report illegal content; in answer to a valid legal request that binds us; to protect someone's life or safety; or to a successor if the app is ever transferred, who must keep this policy's promises. <b>We do not sell personal data and do not share it for advertising.</b></p>
 
-<h2>Your choices and rights</h2>
+<h2 id="transfers">15. International transfers</h2>
+<p>We work from Israel and our providers store data in the United States and other countries, so your data may be processed outside your country. We rely on the safeguards each law provides: for data from the EU, EEA, UK and Switzerland, adequacy decisions (Israel has one, and US companies certified under the EU–US Data Privacy Framework and its UK and Swiss extensions) and otherwise the European Commission's Standard Contractual Clauses (with the UK addendum) in our providers' terms. The regional sections describe other countries' rules. Data that is end-to-end encrypted cannot be read by any provider wherever it is stored.</p>
+
+<h2 id="security">16. Security</h2>
+<p>Photos, group names and keys in the online features are encrypted on the phone with keys we don't have (the exceptions you choose are described in sections 5 and 8). Connections use TLS. Device keys sit in the phone's secure hardware (Secure Enclave or Keystore). Access to our systems and to moderation copies is limited to us and logged. If a breach puts your data at risk, we will tell you and the authorities as the law requires.</p>
+
+<h2 id="rights">17. Your choices and rights</h2>
 <ul>
-  <li><b>See your data:</b> Settings → Account → Export my data gives you your trips, photos and everything our server stores about your account.</li>
-  <li><b>Delete your data:</b> Settings → Account → Delete account removes your account, devices, share links, your photos in group trips and your Cloud Backup from our server straight away. If you no longer have the phone, open <a href="https://vacation.oliksplit.app/account/delete">vacation.oliksplit.app/account/delete</a> and enter your recovery key: it is checked in your browser and never sent to us. The only things we keep after deletion are a note that an account with that random ID was deleted, and content we must keep for one year after reporting it as illegal.</li>
-  <li><b>Turn things off:</b> Settings → Usage statistics; share links can be turned off at any time; you can leave a group trip.</li>
-  <li>Depending on where you live (for example under the GDPR in the EU and UK), you can also ask us to correct your data, restrict or object to its use, and complain to your data-protection authority. Write to us and we'll answer within 30 days.</li>
+  <li><b>See and take your data:</b> Settings → Manage account → Export my data gives you a machine-readable copy of what our server stores about your account. Your trips and photos are already on your phone, and you can save them from the app.</li>
+  <li><b>Delete your data:</b> Settings → Manage account → Delete account removes your account, devices, share links, your photos in group trips and your Cloud Backup from our server straight away. If you no longer have the phone, open the <a href="https://vacation-api.oliksplit.app/account/delete">account deletion page</a> and enter your recovery key: it is checked in your browser and never sent to us. What stays after deletion is listed in <a href="#retention">section 13</a>.</li>
+  <li><b>Turn things off:</b> Settings → Usage statistics; turn off a share link at any time; leave a group trip.</li>
+  <li><b>Other rights:</b> depending on where you live, you can also ask us to correct your data, restrict or object to its use, withdraw consent, appeal our answer, or complain to your data-protection authority. See the <a href="#regions">regional sections</a>.</li>
+</ul>
+<p><b>How to ask.</b> Use the in-app controls, or write to <a href="mailto:ceoolik@gmail.com?subject=My%20Vacation%20privacy%20request">ceoolik@gmail.com</a>. Because accounts are anonymous, we can only link a request to an account through the app on your phone or your recovery key; we never ask for ID documents. We answer within 30 days or sooner where the law requires, and free of charge. You won't be treated differently for using your rights.</p>
+<p>We give everyone these rights, whether or not a privacy law applies to us where you live.</p>
+
+<h2 id="children">18. Children</h2>
+<p>My Vacation is meant for people aged 13 and over (or the higher age your country sets for using online services without a parent, listed in the <a href="#regions">regional sections</a>). It is not directed at children and we don't knowingly collect data from children under 13. Younger children may use the app on their own phone without the online features only with a parent. If you think a child has used an online feature without a parent's permission, write to us and we will delete the account.</p>
+
+<h2 id="regions">19. Regional sections</h2>
+<p>These sections add to the rest of the policy for people in the places named. If one of them gives you more protection, it applies.</p>
+
+<h3 id="eea-uk">European Economic Area, United Kingdom and Switzerland</h3>
+<p><b>Legal bases (GDPR Art. 6).</b></p>
+<div class="table-wrap">
+<table>
+  <tr><th>Processing</th><th>Legal basis</th></tr>
+  <tr><td>Account, share links, group trips, Cloud Backup, push notifications, purchase checks</td><td>Performance of our contract with you (the Terms)</td></tr>
+  <tr><td>Integrity checks, rate limits, server logs, crash reports, Remote Config</td><td>Our legitimate interest in a working, secure service</td></tr>
+  <tr><td>Usage statistics</td><td>Our legitimate interest in improving the app, with a right to object at any time in Settings (in the UK, the statistics exemption in the Privacy and Electronic Communications Regulations)</td></tr>
+  <tr><td>Reports, moderation copies and evidence</td><td>Our legitimate interest, and that of the people affected, in keeping the service free of illegal content; our obligations under the Digital Services Act and the UK Online Safety Act. The reporter chooses whether to send a copy.</td></tr>
+  <tr><td>Report a problem by email, answering your requests</td><td>Our legitimate interest in answering you; our legal obligation to answer rights requests</td></tr>
+</table>
+</div>
+<p>Where we rely on legitimate interest, we weighed it against your rights; ask us for details. Photos can reveal sensitive information (for example health or religion). We don't try to find it, we can't read encrypted photos, and moderation copies are used only to decide on a report.</p>
+<p><b>Your rights.</b> Access, rectification, erasure, restriction, data portability, objection (including to usage statistics), withdrawing consent, and not being subject to a decision based solely on automated processing with legal or similarly significant effects. The only automatic step we take is pausing a share link that gets several reports in a short time until a person checks it. You can complain to the data-protection authority where you live or work (<a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">list of EU authorities</a>; in the UK, the <a href="https://ico.org.uk/make-a-complaint/">Information Commission</a> (formerly the ICO); in Switzerland, the <a href="https://www.edoeb.admin.ch/">FDPIC</a>).</p>
+<p><b>Do you have to give us data?</b> No law requires it. Without the account data the online features can't work; everything else in the app still does.</p>
+
+<h3 id="us">United States</h3>
+<p><b>Notice at collection (California and other states).</b> In the last 12 months we collected these categories of personal information, from you and your device, for the purposes in sections 4–12, and kept them for the periods in section 13:</p>
+<ul>
+  <li>Identifiers: random account and installation IDs, device keys, push tokens, IP address (in logs);</li>
+  <li>Commercial information: your subscription status from Apple or Google;</li>
+  <li>Internet or other electronic network activity: usage statistics, crash reports, server logs;</li>
+  <li>Approximate location: a coarse region derived from the connection (usage statistics only);</li>
+  <li>Audio or visual information: photos you share, which are end-to-end encrypted except a chat preview you choose and copies sent with a report.</li>
+</ul>
+<p>We collect no sensitive personal information as defined by California law for the purpose of inferring characteristics about you, and no precise geolocation or biometric information.</p>
+<p><b>Do Not Sell or Share.</b> We do not sell personal information or share it for cross-context behavioural advertising, and have not done so in the last 12 months, including for consumers under 16. We don't use personal data for targeted advertising or for profiling that produces legal or similarly significant effects. So there is nothing to opt out of; we also treat a Global Privacy Control signal as an opt-out request.</p>
+<p><b>Your rights.</b> Depending on your state (including California, Colorado, Connecticut, Delaware, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah and Virginia), you can ask to know and access the personal information we hold, get a copy, correct it, delete it, and opt out of sale, sharing, targeted advertising and profiling. You can use an authorised agent; we may ask the agent for your signed permission. We won't discriminate against you for using these rights.</p>
+<p><b>Appeals.</b> If we refuse a request, you can appeal by replying to our answer with the subject "Appeal". We answer within 60 days (45 in some states). If you disagree, you can contact your state attorney general.</p>
+<p><b>California Shine the Light.</b> We don't disclose personal information to third parties for their direct marketing.</p>
+<p><b>Do Not Track.</b> We don't track you across other websites or apps, so a browser's Do Not Track signal changes nothing on our pages.</p>
+
+<h3 id="canada">Canada and Québec</h3>
+<p>We handle personal information under PIPEDA and, for people in Québec, the Act respecting the protection of personal information in the private sector (Law 25). Oleksandr Uchytelev is the person in charge of the protection of personal information; contact <a href="mailto:ceoolik@gmail.com?subject=My%20Vacation%20privacy">ceoolik@gmail.com</a>. Before data leaves Québec, we assess whether it will be adequately protected; our providers are listed in section 14. You can access and correct your information, withdraw consent, ask us to stop disseminating it, and complain to the <a href="https://www.priv.gc.ca/en/report-a-concern/">Office of the Privacy Commissioner of Canada</a> or the <a href="https://www.cai.gouv.qc.ca/">Commission d'accès à l'information du Québec</a>.</p>
+
+<h3 id="brazil">Brazil</h3>
+<p>Under the LGPD (Lei 13.709/2018) we process data on the bases of contract performance, legitimate interest and compliance with legal obligations, as described in the EEA table above. You have the rights in Art. 18 of the LGPD: confirmation and access, correction, anonymisation, blocking or deletion of unnecessary data, portability, information about who we share with, and revoking consent. Our data protection officer (encarregado) is Oleksandr Uchytelev, at <a href="mailto:ceoolik@gmail.com?subject=LGPD">ceoolik@gmail.com</a>. International transfers rely on the standard contractual clauses approved by the ANPD (Resolution CD/ANPD 19/2024) or another mechanism in Art. 33. You can complain to the <a href="https://www.gov.br/anpd/">ANPD</a>.</p>
+
+<h3 id="korea">Republic of Korea</h3>
+<p>This section is our privacy policy under Article 30 of the Personal Information Protection Act (PIPA).</p>
+<ul>
+  <li><b>Items, purposes and retention:</b> sections 4–13. We process only the minimum needed for the features you use.</li>
+  <li><b>Provision to third parties:</b> none, except as required by law (section 14).</li>
+  <li><b>Entrustment of processing:</b> Railway (server hosting), Cloudflare (file storage, web delivery), Google (crash reports, usage statistics, settings, push notifications, Play Integrity), Apple (App Attest, push notifications), GitHub (these pages).</li>
+  <li><b>Overseas transfer:</b> the items in sections 4–11 are transferred over the network, when you use the feature, to Railway Corp. and Cloudflare, Inc. (USA), Google LLC (USA and worldwide) and Apple Inc. (USA), for the purposes and periods in sections 4–13. Contacts: each provider's privacy page. The transfer is needed to provide the service you asked for. You can refuse by not using the online features or by turning off usage statistics; the rest of the app still works.</li>
+  <li><b>Destruction:</b> when the retention period ends, electronic files are deleted so they can't be restored.</li>
+  <li><b>Automatic collection:</b> the app uses the Firebase SDK (section 11), not cookies. You can refuse in Settings → Usage statistics.</li>
+  <li><b>Children:</b> we don't knowingly collect data from children under 14; if we learn of it without a legal guardian's consent, we delete it.</li>
+  <li><b>Privacy officer:</b> Oleksandr Uchytelev, <a href="mailto:ceoolik@gmail.com?subject=PIPA">ceoolik@gmail.com</a>.</li>
+  <li><b>Remedies:</b> Personal Information Dispute Mediation Committee (1833-6972, <a href="https://www.kopico.go.kr">kopico.go.kr</a>), KISA Privacy Infringement Report Center (118, <a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a>), Supreme Prosecutors' Office (1301), Korean National Police Agency cyber bureau (182).</li>
 </ul>
 
-<h2>What we don't do</h2>
-<p>No advertising, no selling or sharing of personal data, no tracking across other companies' apps or websites, no reading of your photo library, and no access to photos we haven't been given a key to.</p>
+<h3 id="japan">Japan</h3>
+<p>We handle personal information under the Act on the Protection of Personal Information (APPI) for the purposes in sections 4–12. Data is provided to providers in the United States and other countries (section 14) as entrustment of processing. The United States has no comprehensive federal privacy law equivalent to the APPI; our providers protect data under their contractual commitments to us. Security measures are in section 16. You can ask us to disclose, correct, stop using or delete your personal data, or to tell you about records of provision to third parties, by writing to <a href="mailto:ceoolik@gmail.com?subject=APPI">ceoolik@gmail.com</a>. There is no fee.</p>
 
-<h2>Children</h2>
-<p>The app is not directed at children under 13 and does not knowingly collect their data. If you think a child has used an online feature, write to us and we'll delete the account.</p>
+<h3 id="india">India</h3>
+<p>Under the Digital Personal Data Protection Act, 2023 and its Rules, you can ask for a summary of your data and who processed it, correction, completion, update and erasure, nominate someone to act for you, and have grievances addressed. Our grievance contact is Oleksandr Uchytelev, <a href="mailto:ceoolik@gmail.com?subject=DPDP%20grievance">ceoolik@gmail.com</a>; we answer within the time the Rules set. If you are not satisfied you may complain to the Data Protection Board of India. If you are under 18, use the online features only with a parent's permission. We don't track children, monitor their behaviour or target advertising at them.</p>
 
-<h2>Changes and contact</h2>
-<p>If this policy changes, the new version will be posted on this page with a new date. Questions or requests: <a href="mailto:ceoolik@gmail.com">ceoolik@gmail.com</a>.</p>
+<h3 id="turkey">Türkiye</h3>
+<p>This is our information notice under Article 10 of Law No. 6698 (KVKK). The data controller is Oleksandr Uchytelev. We collect data electronically through the app and our server, for the purposes in sections 4–12, on the legal grounds in Article 5(2) (performance of a contract, legal obligation, legitimate interest). We transfer it to the service providers in section 14, including abroad, under Article 9 safeguards (standard contracts). You have the rights in Article 11: to learn whether your data is processed, request information, request correction or deletion, object, and claim compensation. Send requests to <a href="mailto:ceoolik@gmail.com?subject=KVKK">ceoolik@gmail.com</a>; we answer within 30 days.</p>
+
+<h3 id="israel">Israel</h3>
+<p>We comply with the Protection of Privacy Law, 5741-1981, as amended (including Amendment 13). You are not legally required to give us data; the purposes are in sections 4–12 and the recipients in section 14. You can ask to see your data and to correct or delete it. You can complain to the <a href="https://www.gov.il/en/departments/the_privacy_protection_authority">Privacy Protection Authority</a>.</p>
+
+<h3 id="china">Mainland China</h3>
+<p>My Vacation is not distributed in mainland China.</p>
+
+<h3 id="other">Other countries</h3>
+<p>If you live elsewhere, for example in Indonesia, Vietnam, Ukraine, Saudi Arabia, the United Arab Emirates or another Gulf state, Australia or another country with a privacy law, you have the rights that law gives you. Write to us and we will answer within the time it requires.</p>
+<p><b>Age for using online features without a parent</b> (where we know the law sets one): 13 in the US, UK, Belgium, Denmark, Estonia, Finland, Latvia, Malta, Portugal, Sweden, Iceland and Norway; 14 in Austria, Bulgaria, Cyprus, Italy, Lithuania, Spain, Korea, China and Québec; 15 in Czechia, France, Greece and Slovenia; 16 in the other EU countries and in Brazil (where accounts of people under 16 must be linked to a parent); 18 in India, Indonesia and wherever your law requires it.</p>
+
+<h2 id="changes">20. Changes and contact</h2>
+<p>If this policy changes, the new version will be posted on this page with a new date. If a change matters for you, we will also tell you in the app or the store listing where we can, before it takes effect. Questions or requests: <a href="mailto:ceoolik@gmail.com?subject=My%20Vacation%20privacy">ceoolik@gmail.com</a>.</p>
+<p class="muted">English is the original version of this policy. <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
 </body>
 </html>
